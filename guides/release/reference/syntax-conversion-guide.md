@@ -1,10 +1,9 @@
 ## Angle Bracket Syntax
 
-There are two ways to invoke a component in a template: classic invocation syntax (`{{my-component}}`), and [angle bracket invocation syntax](https://github.com/emberjs/rfcs/blob/master/text/0311-angle-bracket-invocation.md) (`<MyComponent />`).
+There are two ways to invoke a component in a template: curly invocation syntax (`{{my-component}}`), and [angle bracket invocation syntax](https://github.com/emberjs/rfcs/blob/master/text/0311-angle-bracket-invocation.md) (`<MyComponent />`).
 The difference between them is syntactical.
-Classic invocation syntax may also be referred to as curly invocation syntax.
 
-**Classic invocation syntax:**
+**Curly invocation syntax:**
 ```handlebars
 {{site-header user=this.user class=(if this.user.isAdmin "admin")}}
 ```
@@ -25,7 +24,7 @@ While the Angle Bracket Syntax may remind you of HTML elements, it comes with di
 
 The angle bracket invocation syntax is useful when you wish to pass arbitrary HTML attributes to the component.
 This is possible because in angle bracket invocation syntax there is a distinction between passing a named argument and an HTML attribute,
-while in classic invocation syntax everything is an argument to the component, either named or positional.
+while in curly invocation syntax everything is an argument to the component, either named or positional.
 
 ### Leverage Existing Knowledge
 
@@ -34,7 +33,7 @@ Since Angle Bracket notation closely resembles the syntax for HTML elements, we 
 You can apply regular HTML attributes like `class`, `id`, `aria-role`, etc. when you use the component.
 Block form components also follow the same pattern as HTML elements where an HTML-like closing tag denotes where a component starts and ends.
 
-**Classic invocation syntax:**
+**Curly invocation syntax:**
 ```handlebars
 {{#super-select selected=this.user.country as |s|}}
   {{#each this.availableCountries as |country|}}
@@ -54,7 +53,7 @@ Block form components also follow the same pattern as HTML elements where an HTM
 
 ### Positional parameters
 
-The classic invocation syntax supports passing arguments to the component by their position.
+The curly invocation syntax supports passing arguments to the component by their position.
 In the following example, `"greeting"` and `"name"` are positional parameters:
 
 ```handlebars
@@ -102,10 +101,10 @@ export default Component.extend({
 <MyGreeting @params={{array "Hello" "World"}}>
 ```
 
-### When to use classic invocation syntax?
+### When to use curly invocation syntax?
 
-Although Angle Bracket syntax is considered to be the best approach, classic invocation syntax is fine to keep using.
-In some cases, classic invocation is still required. 
+Although Angle Bracket syntax is considered to be the best approach, curly invocation syntax is fine to keep using.
+In some cases, curly invocation is still required. 
 When you need direct support for positional arguments or if your components are nested within the file tree, you should still reach for those curly braces:
 
 ```handlebars
